@@ -1,8 +1,8 @@
 //Rutas de Tasks
-const { Router } = require("express"); //Traigo solo la funcion Router
+import { Router } from "express"; //Traigo solo la funcion Router
 const router = Router();
-const Task = require("../models/Task");
-const TaskController = require("../controllers/taskController");
+import TaskModel from "../models/Task";
+import TaskController from "../controllers/taskController";
 
 // Listar tareas
 router.get("/", TaskController.findAllTasks);
@@ -22,4 +22,4 @@ router.delete("/:id", TaskController.deleteTask);
 // Actualizar tarea por ID
 router.put("/:id", TaskController.updateTask);
 
-module.exports = router;
+export default router;

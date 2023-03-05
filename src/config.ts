@@ -1,8 +1,8 @@
 // Este archivo carga las variables de entorno del proyecto, aquellas que esten en .env
-const { config } = require("dotenv");
+import { config } from "dotenv";
 config();
 
-module.exports = {
+export default {
   mongodbURL: process.env.DB_CONNECTION_STRING,
   PORT: process.env.PORT || 3000,
 };
