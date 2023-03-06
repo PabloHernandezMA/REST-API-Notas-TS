@@ -81,5 +81,5 @@ export default {
   findTask,
   findAllDoneTasks,
   deleteTask,
-  updateTask,
+  updateTask
 };

@@ -16,6 +16,7 @@ app.use(morgan("dev"));
 
 //Routes
 app.use("/api/task", taskRoutes);
+app.all('*', (req, res) => {res.status(404).send('<h1>404! Page not found</h1>');});
 
 
 //Conexion a DB
