@@ -28,11 +28,10 @@ const addTask = async (req: any, res: any) => {
 
 // Filtrar tarea por ID
 const findTask = async (req: any, res: any) => {
-  const {id} = req.params
   try {
-    const result = await Task.findById(id);
+    const result = await Task.findById(req.params.id);
     if (!result) {
-      return res.status(404).json({message: `Task ${id} does not exist`})
+      return res.status(404).json({message: `Task ${req.params.id} does not exist`})
     }
     res.status(200).json(result);
   } catch (error: any) {
