@@ -1,5 +1,11 @@
 import { Schema, model } from 'mongoose';
 
+interface ITask{
+  title: string,
+  description: string,
+  done: boolean
+}
+
 const taskSchema = new Schema(
   {
     //Formatea datos de la DB con mongoose
@@ -22,5 +28,5 @@ const taskSchema = new Schema(
     timestamps: true, //Agrega proiedades 'createdAt' y 'updatedAt'
   }
 );
-let Task = model('Task', taskSchema); //Para poder usar el schema en el resto del proyecto se debe exportar como un model, por eso esto
+let Task = model<ITask>('Task', taskSchema); //Para poder usar el schema en el resto del proyecto se debe exportar como un model, por eso esto
 export default Task
