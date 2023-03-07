@@ -7,6 +7,9 @@ import TaskController from "../controllers/taskController";
 // Listar tareas
 router.get("/", TaskController.findAllTasks);
 
+// Listar tareas query params
+router.get("/params", TaskController.findTasks);
+
 // Agregar tarea
 router.post("/", TaskController.addTask);
 
